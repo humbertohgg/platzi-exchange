@@ -15,7 +15,7 @@ export default {
 
   data() {
     return {
-      isLoading : false,
+      isLoading: false,
       assets: [],
       fluids: []
     }
@@ -25,8 +25,10 @@ export default {
     this.isLoading = true
 
     api.getAssets().then(assets => (this.assets = assets))
-    api.getFluids().then(fluids => (this.fluids = fluids))
-    .finally(() => (this.isLoading = false))
+    api
+      .getFluids()
+      .then(fluids => (this.fluids = fluids))
+      .finally(() => (this.isLoading = false))
   }
 }
 </script>

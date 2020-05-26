@@ -4,7 +4,9 @@
       <tr class="bg-gray-100 border-b-2 border-gray-400">
         <th></th>
         <th :class="{ up: this.sortOrder === 1, down: this.sortOrder === -1 }">
-          <span class="underline cursor-pointer" @click="changeSortOrder">Ranking</span>
+          <span class="underline cursor-pointer" @click="changeSortOrder"
+            >Ranking</span
+          >
         </th>
         <th>Nombre</th>
         <th>Precio</th>
@@ -43,7 +45,8 @@
           <router-link
             class="hover:underline text-green-600"
             :to="{ name: 'coin-detail', params: { id: a.id } }"
-          >{{ a.name }}</router-link>
+            >{{ a.name }}</router-link
+          >
           <small class="ml-1 text-gray-500">{{ a.symbol }}</small>
         </td>
         <td>{{ a.priceUsd | dollar }}</td>
@@ -54,7 +57,9 @@
               ? 'text-red-600'
               : 'text-green-600'
           "
-        >{{ a.changePercent24Hr | percent }}</td>
+        >
+          {{ a.changePercent24Hr | percent }}
+        </td>
         <td class="hidden sm:block">
           <px-button @custom-click="goToCoin(a.id)">
             <span>Detalle</span>
@@ -73,7 +78,7 @@ export default {
 
   components: { PxButton },
 
-  data () {
+  data() {
     return {
       filter: '',
       sortOrder: 1

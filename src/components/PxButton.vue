@@ -20,7 +20,7 @@ export default {
       default: false
     }
   },
-  
+
   methods: {
     buttonClick() {
       this.$emit('custom-click')
